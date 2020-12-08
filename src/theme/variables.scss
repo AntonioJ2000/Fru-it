@@ -3,6 +3,91 @@
 
 /** Ionic CSS Variables **/
 :root {
+
+  /** My App Theming **/
+  .dark-theme{
+    h1, .textLabel, .titleToolbar, .nameTextLabel, .developedBy, .dotsColor, .titleLabel, .descriptionLabel, .appTitle, .loginText{
+      color: white;
+    }
+    
+    .buttonType{
+      color: white;
+      --border-color: white;
+      font-weight: normal;
+    }
+
+    .editLeaveMenu{
+      --ion-background-color: rgb(63, 63, 63);
+      --color: white;
+      color: white;
+    }
+
+    .tabIconDesign{
+      color: white;
+    }
+
+    --ion-item-color: white;
+    --ion-background-color: rgb(22, 22, 22);
+    --ion-tab-bar-background:black;
+    --ion-toolbar-background:rgb(0, 0, 0);
+    --ion-tab-bar-border-color:rgb(100, 100, 100);
+    --ion-tab-bar-color-selected: rgb(212, 212, 212);
+  }
+
+  .red-theme{
+    .tabTextDesign{
+      --ion-tab-bar-color: rgb(61, 61, 61);
+    }
+
+    --ion-background-color: rgb(255, 234, 234);
+
+    --ion-tab-bar-background:rgb(255, 57, 57);
+    --ion-toolbar-background:rgb(255, 57, 57);
+    --ion-tab-bar-border-color:rgb(100, 100, 100);
+    --ion-tab-bar-color-selected: black;
+  }
+
+  .blue-theme{
+    .tabTextDesign{
+      --ion-tab-bar-color: rgb(61, 61, 61);
+    }
+
+    --ion-background-color: rgb(190, 242, 255);
+
+    --ion-tab-bar-background: #3880ff;
+    --ion-toolbar-background: #3880ff;
+    --ion-tab-bar-border-color:rgb(100, 100, 100);
+    --ion-tab-bar-color-selected: black;
+  }
+
+  .orange-theme{
+    --ion-background-color:rgb(255, 237, 203);
+
+    --ion-tab-bar-background: orange;
+    --ion-toolbar-background: orange;
+    --ion-tab-bar-border-color:rgb(100, 100, 100);
+    --ion-tab-bar-color-selected: black;
+  }
+
+  .yellow-theme{
+    --ion-background-color: rgb(255, 255, 219);
+
+    --ion-tab-bar-background:rgb(255, 255, 88);
+    --ion-toolbar-background:rgb(255, 255, 88);
+    --ion-tab-bar-border-color:rgb(100, 100, 100);
+    --ion-tab-bar-color-selected: black;
+  }
+
+  .green-theme{
+    --ion-background-color: #e8fae4;
+
+    --ion-tab-bar-background:#6DE065;
+    --ion-toolbar-background:#6DE065;
+    --ion-tab-bar-border-color:rgb(100, 100, 100);
+    --ion-tab-bar-color-selected: black;
+  }
+
+
   /** primary **/
   --ion-color-primary: #3880ff;
   --ion-color-primary-rgb: 56, 128, 255;
@@ -68,7 +153,7 @@
   --ion-color-medium-tint: #9d9fa6;
 
   /** light **/
-  --ion-color-light: #f4f5f8;
+  --ion-color-light: #ffffff;
   --ion-color-light-rgb: 244, 245, 248;
   --ion-color-light-contrast: #000000;
   --ion-color-light-contrast-rgb: 0, 0, 0;
