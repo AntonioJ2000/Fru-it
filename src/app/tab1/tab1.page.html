@@ -14,7 +14,7 @@
 
    <ion-list mode="ios" lines="full">
      <ion-item-sliding *ngFor="let nota of this.notas;let i=index">
-       <ion-item-options side="start">
+       <ion-item-options side="start" (ionSwipe)="this.confirmDeleteNote(nota.id)">
         <ion-item-option color="danger" expandable 
         (click)="this.confirmDeleteNote(nota.id)">
           <ion-icon name="trash" style="font-size: x-large;" 

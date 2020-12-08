@@ -42,15 +42,14 @@ export class AuthService implements CanActivate {
   }
   
   public async logout(){
-    let u = await this.google.logout();
-    console.log(u)
+   let u = this.google.logout();
     this.user = {
       token: -1,
       name: '',
       avatar: '',
       email:''
     }
-    await this.storage.setItem("user",this.user);
+    await this.storage.setItem("user",this.user); 
   }
 
   public async login() {
