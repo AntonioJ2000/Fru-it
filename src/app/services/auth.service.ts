@@ -49,7 +49,7 @@ export class AuthService implements CanActivate {
       avatar: '',
       email:''
     }
-    await this.storage.setItem("user",this.user); 
+    await this.storage.remove("user"); 
   }
 
   public async login() {
