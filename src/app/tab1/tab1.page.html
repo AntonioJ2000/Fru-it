@@ -1,13 +1,13 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title class="titleToolbar">
-      Mis notas
+      {{ 'TITLET1' | translate }}
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-searchbar class="textLabel" #search placeholder="Filtrar notas" (ionChange)="searchNota($event)"></ion-searchbar>
+  <ion-searchbar class="textLabel" #search placeholder="{{ 'FILTERTEXT' | translate }}" (ionChange)="searchNota($event)"></ion-searchbar>
   <ion-refresher slot="fixed" (ionRefresh)="this.cargaDatos($event)">
     <ion-refresher-content class="refresherStyle"></ion-refresher-content>
   </ion-refresher>
@@ -21,7 +21,7 @@
           ></ion-icon>
         </ion-item-option>
        </ion-item-options>
-      <ion-item>
+      <ion-item (click)="this.editaNota(nota)">
         <ion-label class="textLabel"><h1>{{nota.titulo}}</h1>
           {{nota.texto}}
         </ion-label>

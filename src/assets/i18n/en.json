@@ -1,0 +1,35 @@
+{
+    "TAB1TITLE": "Notes",
+    "TAB2TITLE": "Add note",
+    "TAB3TITLE": "Profile",
+
+    "TITLET1": "My notes",
+    "FILTERTEXT":"Filter notes",
+    "LOADINGTEXT":"The notes are loading, please, wait.",
+    "DELETEHEADER": "Delete note",
+    "DELETEMESSAGE": "Do you want to delete the selected note? You won't be able to restore it in the future",
+    "BUTTONNEGATIVE": "Cancel",
+    "BUTTONPOSITIVE": "Delete",
+
+    "TITLEEDIT": "Edit note",
+    "CANCELEDIT": "Cancel",
+    "APPROVEEDIT": "Edit",
+
+    "TITLET2": "Create a note",
+    "NOTETITLEPH": "Title",
+    "NOTEDESCRIPTIONPH": "Description",
+    "ADDNOTE": "Add",
+
+    "TITLET3": "My profile",
+    "DEVELOPEDBY": "Developed by:",
+    "OPTIONTITLE": "What do you want to do?",
+    "OPTIONTHEME": "Change theme",
+    "OPTIONLANGUAGE":"Change language",
+    "CLOSESESSION": "Close session",
+    "SELECTTHEMETEXT": "Select a theme:",
+    "DEFAULTTHEME": "Default theme",
+    "DARKTHEME": "Dark mode",
+    "CANCELTHEMEPICKER": "Cancel",
+    "SELECTLANGUAGE":"Select a language:"
+
+}

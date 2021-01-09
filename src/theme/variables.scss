@@ -47,6 +47,18 @@
     --ion-tab-bar-color-selected: black;
   }
 
+  .pink-theme{
+    .tabTextDesign{
+      --ion-tab-bar-color: rgb(61, 61, 61);
+    }
+    --ion-background-color:rgb(255, 235, 248);
+
+    --ion-tab-bar-background:rgb(255, 130, 213);
+    --ion-toolbar-background:rgb(255, 130, 213);
+    --ion-tab-bar-border-color:rgb(100, 100, 100);
+    --ion-tab-bar-color-selected: black;
+  }
+
   .blue-theme{
     .tabTextDesign{
       --ion-tab-bar-color: rgb(61, 61, 61);

@@ -26,6 +26,11 @@ export class ThemeService {
     this.renderer.addClass(this.document.body, 'red-theme');
   }
 
+  enablePink(){
+    this.removeAll();
+    this.renderer.addClass(this.document.body, 'pink-theme');
+  }
+
   enableBlue(){
     this.removeAll();
     this.renderer.addClass(this.document.body, 'blue-theme');
@@ -54,6 +59,7 @@ export class ThemeService {
   removeAll(){
     this.renderer.removeClass(this.document.body, 'dark-theme');
     this.renderer.removeClass(this.document.body, 'red-theme');
+    this.renderer.removeClass(this.document.body, 'pink-theme');
     this.renderer.removeClass(this.document.body, 'blue-theme');
     this.renderer.removeClass(this.document.body, 'orange-theme');
     this.renderer.removeClass(this.document.body, 'yellow-theme');

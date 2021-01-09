@@ -7,7 +7,8 @@ import { NativeStorage } from '@ionic-native/native-storage/ngx';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
 import { ThemeService } from '../services/theme.service';
-
+import { TranslateService } from '@ngx-translate/core';
+import { stringify } from '@angular/compiler/src/util';
 
 @Component({
   selector: 'app-tab1',
@@ -28,7 +29,8 @@ export class Tab1Page{
     private router:Router,
     public loadingController: LoadingController,
     public alertController: AlertController,
-    private themeService:ThemeService) {  }
+    private themeService:ThemeService,
+    private translate:TranslateService) {  }
 
   public async logout(){
     await this.authS.logout();
@@ -66,6 +68,7 @@ export class Tab1Page{
             }
             this.listaNotas.push(nota);
             this.notas = this.listaNotas;
+         
           });
           //Ocultar el loading
           console.log(this.listaNotas);
@@ -121,9 +124,15 @@ export class Tab1Page{
   }
 
   async presentLoading() {
+    let loadingText:string;
+
+    this.translate.get('LOADINGTEXT').subscribe((res:string)=>{
+      loadingText=res;
+    })
+
     const loading = await this.loadingController.create({
       cssClass: 'my-custom-class',
-      message: 'Las notas estan cargando, por favor, espere.',
+      message: loadingText,
       spinner:'crescent',
       duration: 400
     });
@@ -131,19 +140,41 @@ export class Tab1Page{
   }
 
   async confirmDeleteNote(id:any) {
+    let header:string;
+    let message:string;
+    let buttonTextNegative:string;
+    let buttonTextPositive:string;
+
+    this.translate.get('DELETEHEADER').subscribe((res:string)=>{
+      header=res;
+    });
+
+    this.translate.get('DELETEMESSAGE').subscribe((res:string)=>{
+      message=res;
+    });
+
+    this.translate.get('BUTTONNEGATIVE').subscribe((res:string)=>{
+      buttonTextNegative=res;
+    });
+
+    this.translate.get('BUTTONPOSITIVE').subscribe((res:string)=>{
+      buttonTextPositive=res;
+    });
+
     const alert = await this.alertController.create({
+      
       cssClass: 'deleteNote',
-      header: 'Está a punto de borrar la nota',
-      message: '¿Está seguro de que desea borrar la nota indicada? No la podrá recuperar posteriormente.',
+      header: header,
+      message: message,
       buttons: [
         {
-          text: 'Cancelar',
+          text: buttonTextNegative,
           role: 'cancel',
           cssClass: 'alertCancel',
           handler: () => {
           }
         }, {
-          text: 'Borrar',
+          text: buttonTextPositive,
           cssClass: 'alertDelete',
           handler: () => {
             this.borraNota(id);

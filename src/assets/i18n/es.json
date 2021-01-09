@@ -1,0 +1,35 @@
+{
+    "TAB1TITLE": "Notas",
+    "TAB2TITLE": "Añadir nota",
+    "TAB3TITLE": "Perfil",
+    
+    "TITLET1": "Mis notas",
+    "FILTERTEXT":"Filtrar notas",
+    "LOADINGTEXT":"Las notas están cargando, por favor, espere.",
+    "DELETEHEADER": "Borrar nota",
+    "DELETEMESSAGE": "¿Está seguro de que desea borrar la nota indicada? No la podrá recuperar posteriormente",
+    "BUTTONNEGATIVE": "Cancelar",
+    "BUTTONPOSITIVE": "Borrar",
+
+    "TITLEEDIT": "Editar nota",
+    "CANCELEDIT": "Cancelar",
+    "APPROVEEDIT": "Editar",
+
+    "TITLET2": "Añadir nota",
+    "NOTETITLEPH": "Título",
+    "NOTEDESCRIPTIONPH": "Descripción",
+    "ADDNOTE": "Añadir",
+
+    "TITLET3": "Mi perfil",
+    "DEVELOPEDBY": "Desarrollado por:",
+    "OPTIONTITLE": "¿Qué desea hacer?",
+    "OPTIONTHEME": "Cambiar tema",
+    "OPTIONLANGUAGE":"Cambiar lenguaje",
+    "CLOSESESSION": "Cerrar sesión",
+    "SELECTTHEMETEXT": "Seleccione un tema:",
+    "DEFAULTTHEME": "Tema por defecto",
+    "DARKTHEME": "Modo oscuro",
+    "CANCELTHEMEPICKER": "Cancelar",
+    "SELECTLANGUAGE":"Seleccione un idioma:"
+
+}

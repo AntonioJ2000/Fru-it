@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title class="titleToolbar">
-      Añadir nota
+      {{ 'TITLET2' | translate}}
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -12,13 +12,13 @@
         <ion-input class="titleLabel" 
         type="text" 
          formControlName="title"
-         placeholder="Título">
+         placeholder="{{ 'NOTETITLEPH' | translate }}">
         </ion-input>
     </ion-item>
     <ion-item>
         <ion-textarea class="descriptionLabel"
          formControlName="description"
-          placeholder="Descripción"
+          placeholder="{{ 'NOTEDESCRIPTIONPH' | translate }}"
          autocapitalize="true"
           auto-grow="true">
         </ion-textarea>
@@ -26,7 +26,7 @@
     <div style="text-align: right;">
       <ion-button  class="buttonType" expand="block" fill="outline" type="submit" [disabled]="!tasks.valid">
       <ion-icon name="add-outline"></ion-icon>
-      Añadir
+      {{ 'ADDNOTE' | translate }}
     </ion-button>
   </div>
   </form>
