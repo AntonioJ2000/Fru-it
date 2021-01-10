@@ -8,7 +8,7 @@ import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
 import { ThemeService } from '../services/theme.service';
 import { TranslateService } from '@ngx-translate/core';
-import { stringify } from '@angular/compiler/src/util';
+import { HelpersService } from '../services/helpers.service';
 
 @Component({
   selector: 'app-tab1',
@@ -30,7 +30,8 @@ export class Tab1Page{
     public loadingController: LoadingController,
     public alertController: AlertController,
     private themeService:ThemeService,
-    private translate:TranslateService) {  }
+    private translate:TranslateService,
+    private helpersS:HelpersService) {  }
 
   public async logout(){
     await this.authS.logout();
@@ -45,6 +46,12 @@ export class Tab1Page{
       console.log(like);
       this.themeService.setThemeOnInit(like.theme);
     })
+
+    this.nativeStorage.getItem('appLanguage')
+    .then((language)=>{
+      this.changeLang(language.lang)
+    })
+
     await this.presentLoading();
   }
 
@@ -55,6 +62,19 @@ export class Tab1Page{
     this.cargaDatos();
   }
 
+  /**
+   * Function that allows the app to change the language based on the user selected language.
+   * @param lang language
+   */
+  changeLang(lang:string){
+    console.log(lang)
+    this.translate.use(lang);
+  }
+
+  /**
+   * Function that gets all the items from our database.
+   * @param $event 
+   */
   public cargaDatos($event=null){
     try {
       this.notasS.leeNotas()
@@ -80,6 +100,11 @@ export class Tab1Page{
       //Error
     }
   }
+
+  /**
+   * Function that deletes a selected note.
+   * @param id id of the note.
+   */
   public borraNota(id:any){
     this.notasS.borraNota(id)
     .then(()=>{
@@ -97,6 +122,11 @@ export class Tab1Page{
 
     })
   }
+
+  /**
+   * Function that allows the user to edit a selected note.
+   * @param nota note selected to edit.
+   */
   public async editaNota(nota:Nota){
     const modal = await this.modalController.create({
       component: EditNotaPage,
@@ -113,6 +143,10 @@ export class Tab1Page{
     })
   }
 
+  /**
+   * Function that allows the user to search a note
+   * @param ev 
+   */
   public searchNota(ev:any){
     const val = ev.target.value;
     this.notas = this.listaNotas;
@@ -129,16 +163,13 @@ export class Tab1Page{
     this.translate.get('LOADINGTEXT').subscribe((res:string)=>{
       loadingText=res;
     })
-
-    const loading = await this.loadingController.create({
-      cssClass: 'my-custom-class',
-      message: loadingText,
-      spinner:'crescent',
-      duration: 400
-    });
-    await loading.present();
+    this.helpersS.showPresentLoading(loadingText);  
   }
 
+  /**
+   * Alert that makes the user confirm the delete action.
+   * @param id id of the note the user wants to delete.
+   */
   async confirmDeleteNote(id:any) {
     let header:string;
     let message:string;

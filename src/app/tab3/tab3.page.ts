@@ -37,6 +37,12 @@ export class Tab3Page{
       console.log(like);
       this.themeService.setThemeOnInit(like.theme);
     })
+
+    this.nativeStorage.getItem('appLanguage')
+    .then((language)=>{
+      this.changeLang(language.lang)
+    })
+    
     this.userProfile={
       token: this.authS.user.token,
       name: this.authS.user.name,
@@ -44,6 +50,9 @@ export class Tab3Page{
     }
   }
 
+    /**
+     * Allows the user to log out
+     */
     public async logout(){
       await this.authS.logout();
       if(!this.authS.isLogged()){
@@ -51,6 +60,9 @@ export class Tab3Page{
       }    
     }
 
+    /**
+     * Opens the Twitter App with a preselected profile
+     */
     openTwitterPage(){
       const options: InAppBrowserOptions = {
         toolbar: 'yes',
@@ -59,7 +71,10 @@ export class Tab3Page{
       const browser = this.inAppBrowser.create(this.urlTwitter, '_system', options);
 
     }
-    
+
+    /**
+     * Opens the Instagram App with a preselected profile
+     */
     openInstagramPage(){
       const options: InAppBrowserOptions = {
         toolbar: 'yes',
@@ -102,8 +117,16 @@ export class Tab3Page{
       this.themeService.enableGreen();
     }
 
+    /**
+     * Allows the user to change the app language and save it to the native storage.
+     * @param lang The language.
+     */
     changeLang(lang:string){
       this.translate.use(lang);
+      this.nativeStorage.setItem('appLanguage', {lang})
+            .then((language)=>{
+              console.log("El idioma guardado será " + lang)
+            })
     }
 
     async presentActionSheet() {
@@ -234,7 +257,7 @@ export class Tab3Page{
           cssClass: 'editLeaveMenu',
           icon: 'assets/spain.svg',
           handler: () => {
-            this.changeLang("es");
+            this.changeLang("es"); 
           }
         },{
           text: "English (UK)",

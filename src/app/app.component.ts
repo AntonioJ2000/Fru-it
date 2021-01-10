@@ -20,8 +20,8 @@ export class AppComponent {
     private authS:AuthService,
     private translate: TranslateService
   ) {
-    this.translate.setDefaultLang('en');
-    this.translate.use('en');
+    this.translate.setDefaultLang('es');
+    this.translate.use('es');
     this.initializeApp();
   }
 

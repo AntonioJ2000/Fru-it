@@ -1,4 +1,6 @@
 {
+    "LOGINTEXT":"Por favor, inicie sesión con ",
+
     "TAB1TITLE": "Notas",
     "TAB2TITLE": "Añadir nota",
     "TAB3TITLE": "Perfil",
@@ -19,6 +21,8 @@
     "NOTETITLEPH": "Título",
     "NOTEDESCRIPTIONPH": "Descripción",
     "ADDNOTE": "Añadir",
+    "TOASTSUCCESS":"Nota guardada con éxito.",
+    "TOASTFAILURE":"Error al guardar la nota. Inténtelo de nuevo más tarde.",
 
     "TITLET3": "Mi perfil",
     "DEVELOPEDBY": "Desarrollado por:",

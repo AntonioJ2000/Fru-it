@@ -1,4 +1,6 @@
 {
+    "LOGINTEXT":"Please, sign in with ",
+
     "TAB1TITLE": "Notes",
     "TAB2TITLE": "Add note",
     "TAB3TITLE": "Profile",
@@ -19,6 +21,8 @@
     "NOTETITLEPH": "Title",
     "NOTEDESCRIPTIONPH": "Description",
     "ADDNOTE": "Add",
+    "TOASTSUCCESS":"Note was saved succesfully.",
+    "TOASTFAILURE":"There was an error saving the note. Try it later.",
 
     "TITLET3": "My profile",
     "DEVELOPEDBY": "Developed by:",
